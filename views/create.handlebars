@@ -1,0 +1,225 @@
+<style>
+  .create {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+  }
+
+  .create form {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px 40px;
+    background: #fff;
+    box-shadow: 0px 0px 4px #ccc;
+  }
+
+  .create form span {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .create form hr {
+    background-color: #333;
+    margin-top: 20px;
+  }
+
+  .create form .block {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    padding-top: 10px;
+  }
+
+  .create form .block p {
+    width: 40%;
+    font-weight: 500;
+  }
+
+  .create form .block .data {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create form .block .data div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create form .block .data input {
+    height: 30px;
+
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: 0;
+
+    padding: 5px 10px;
+    margin-bottom: 5px;
+  }
+
+  .create form .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .create form a.home {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase; 
+
+    cursor:pointer;
+    width: 40%;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 15px;
+
+    background: #007bff;
+    border: none;
+    border-radius: 3px;
+
+    font-weight: bold;  
+  }
+
+  .create form button {
+    cursor:pointer;
+    width: 40%;
+    height: 40px;
+
+    margin-top: 15px;
+    padding: 10px 15px;
+
+    background: #28a745;
+    border: none;
+    border-radius: 3px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .create form button a {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .create form span.error {
+    font-size: 14px;
+    color: red;
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+</style>
+
+<div class="create">
+  <form action="" method="POST">
+    <span class="removeModal">Cadastre uma empresa</span>
+
+    <hr size="1">
+    <div class="block">
+      <p>Dados</p>
+      <div class="data">
+        <div>
+          <label for="">CNPJ</label>
+          <input type="text" name="cnpj" id="cnpj" autocomplete="off" required="required" onkeyup="cnpjMask('__.___.___/____-__', this)">   
+          <span class="error"></span>  
+        </div>
+
+        <div>
+            <label for="">CPF</label>
+            <input type="text" name="cpf" id="cpf" autocomplete="off" required="required" onkeyup="cpfMask('___.___.___-__', this)">
+            <span class="error"></span>   
+        </div>
+
+        <div>
+          <label for="">Nome da Empresa</label>
+          <input type="text" name="company_name" id="company_name" autocomplete="off" required="required">
+          <span class="error"></span>    
+        </div>
+      </div>
+    </div>
+
+    <hr size="1">
+    <div class="block">
+      <p>Contato</p>
+      <div class="data">
+        <div>
+          <label for="">Email</label>
+          <input type="email" name="email" id="email" autocomplete="off" required="required">
+          <span class="error"></span>
+        </div> 
+        <div>
+          <label for="">Telefone</label>
+          <input type="text" name="telefone" id="telefone" autocomplete="off" required="required" onkeyup="telMask('(__)_____-____', this)">
+          <span class="error"></span>
+        </div> 
+      </div>
+    </div>
+
+    <hr size="1">
+    <div class="block">
+      <p>Endereço</p>
+      <div class="data">
+        <div>
+          <label for="">CEP</label>
+          <input type="text" name="cep" id="cep" autocomplete="off" required="required">
+          <span class="error"></span> 
+        </div>
+
+        <div>
+          <label for="">UF</label>
+          <input type="text" name="uf" id="uf" autocomplete="off" required="required">
+          <span class="error"></span> 
+        </div>
+
+        <div>
+          <label for="">Cidade</label>
+          <input type="text" name="cidade" id="cidade" autocomplete="off" required="required">
+          <span class="error"></span>
+        </div>
+
+        <div>
+          <label for="">Bairro</label>
+          <input type="text" name="bairro" id="bairro" autocomplete="off" required="required">
+          <span class="error"></span>
+        </div>
+
+        <div>
+          <label for="">Logradouro</label>
+          <input type="text" name="logradouro" id="logradouro" autocomplete="off" required="required">
+          <span class="error"></span>
+        </div>
+
+        <div>
+          <label for="">Número</label>
+          <input type="text" name="numero" id="numero" autocomplete="off" required="required">
+          <span class="error"></span>
+        </div>
+
+      </div>
+    </div>
+    <hr size="1">
+    <div class="buttons">
+      <a class="home" href="/">voltar</a>
+      <button type="submit"> cadastrar </button>
+    </div>
+  </form>
+</div>
